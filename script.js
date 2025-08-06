@@ -4,7 +4,7 @@ let csvStr = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63
 
 // Split the string into rows
 let rows = csvStr.split("\n");
-
+//console.log(rows);
 
 // Loop through each row
 for (let i = 0; i < rows.length; i++) 
@@ -12,6 +12,7 @@ for (let i = 0; i < rows.length; i++)
     let cells = rows[i].split(",");
     console.log(cells[0], cells[1], cells[2], cells[3]);
     }
+
 
 
 
@@ -26,12 +27,14 @@ const dataObjects = [
 ];
 
 
-// Start with headers
-let csvString = "ID,Name,Occupation,Age\\n";
+let csvString = 'Id,Name,Occupation,Age\\n';
 
-// Add each object's data row
-csvString += dataObjects.map(obj =>
-  `${obj.id},${obj.name},${obj.occupation},${obj.age}`.concat("\\n")
-);
+for (let i = 0; i < dataObjects.length; i++) 
+  {
+  const obj = dataObjects[i];
+  csvString += `${obj.id},${obj.name},${obj.occupation},${obj.age}'\\n`;
+ }
 
 console.log(csvString);
+
+
