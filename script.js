@@ -1,4 +1,4 @@
-//Part 1: Refactoring Old Code
+/*//Part 1: Refactoring Old Code
 // Starting String
 let csvStr = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
 
@@ -11,13 +11,32 @@ for (let i = 0; i < rows.length; i++)
     {
     let cells = rows[i].split(",");
     console.log(cells[0], cells[1], cells[2], cells[3]);
+    } */
+
+  //Part 2 : Expanding Functionality
+  let csvStr2 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
+  let rows2 = csvStr2.split("\n");
+  let cellArray=[];
+  console.log(rows2);
+    
+  console.log(rows2[0]);
+  for (let i = 0; i < rows2.length; i++) 
+    {
+    let cell = rows2[i].split(",");
+    cellArray.push(cell);
     }
+    
+    console.log(cellArray);
+
+    //Part 3:Transforming Data
+    // cellArray is input for this section
+    
 
 
 
 
 
-//Part 5: Full Circle
+/*//Part 5: Full Circle
 
 const dataObjects = [
   { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
@@ -35,6 +54,5 @@ for (let i = 0; i < dataObjects.length; i++)
   csvString += `${obj.id},${obj.name},${obj.occupation},${obj.age}'\\n`;
  }
 
-console.log(csvString);
-
+console.log(csvString); */
 
