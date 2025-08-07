@@ -17,21 +17,40 @@ for (let i = 0; i < rows.length; i++)
   let csvStr2 = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor's Assistant,26`;
   let rows2 = csvStr2.split("\n");
   let cellArray=[];
-  console.log(rows2);
+  //console.log(rows2);
     
-  console.log(rows2[0]);
+  //console.log(rows2[0]);
   for (let i = 0; i < rows2.length; i++) 
     {
     let cell = rows2[i].split(",");
     cellArray.push(cell);
     }
     
-    console.log(cellArray);
+    //console.log(cellArray);
 
     //Part 3:Transforming Data
     // cellArray is input for this section
-    
+    //create object for are the values whr keys are first array
+ //const obj={};
 
+ const data = cellArray;
+
+const headers = cellArray[0]; // First row as keys
+const result = [];
+
+for (let i = 1; i < data.length; i++) {
+  const row = data[i];
+  const obj = {};
+
+  for (let j = 0; j < headers.length; j++) {
+    const key = headers[j].toLowerCase(); 
+    obj[key] = row[j];
+  }
+
+  result.push(obj);
+}
+
+console.log(result);
 
 
 
